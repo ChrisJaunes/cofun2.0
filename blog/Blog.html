@@ -1,0 +1,16 @@
+$def with (blog)
+$if blog:
+    $if blog.link:
+      <a href="$blog.link">click here, get to blog</a>
+    $else:
+      $var title: $blog.Title - blog
+      <h1 class="center">$blog.title<h1>
+	  <section>
+        <div class="markdown">$:blog.content</div>
+      </section>
+      <section>
+        <div class="markdoen">$:blog.discuss</div>
+      </section>
+$else:
+    $var title: Blog Not Found
+    <h1>Blog Not Found</h1>

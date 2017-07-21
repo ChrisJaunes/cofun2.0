@@ -1,0 +1,19 @@
+$def with (url, blog)
+$if blog:
+    $var title: BlogEdit
+	<form method="POST" action="$url" name="LoginForm" class="form-horizontal">
+      <p>title</p><input type="title" id="title" name="title" placeholder="title">
+      <p>link address</p><input type="linkadress" id="linkaddress" name="linkaddress" placeholder="linkaddress">
+      <div>
+        <label for="blogcontent" class="biglabel">content</label>
+        <div class="wmd-panel">
+          <div id="wmd-button-bar-input"></div>
+          <textarea class="wmd-input" id="wmd-input-input" name="ProblemInput">$content</textarea>
+          <div id="wmd-preview-input" class="wmd-panel wmd-preview"></div>
+        </div>
+      </div>
+	  <button>preview</button>
+    </form>
+$else:
+    $var title: Blog Not Found
+    <h1>Blog Not Found</h1>
